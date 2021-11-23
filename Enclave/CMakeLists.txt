@@ -24,6 +24,7 @@ set(CMAKE_CXX_FLAGS 			"${CMAKE_CXX_FLAGS} ${COMMON_C_CPP_FLAGS} -std=c++11 -nos
 
 add_custom_command(
         OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Enclave_t.c
+        MAIN DEPENDS Enclave.edl
         COMMAND ${SGX_EDGER8R} --trusted Enclave.edl
         --search-path ${SGXSDK_INCLUDE_DIRS}
         --search-path ${CMAKE_CURRENT_SOURCE_DIR}
