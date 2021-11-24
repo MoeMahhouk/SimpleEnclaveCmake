@@ -28,6 +28,7 @@ set_property(DIRECTORY PROPERTY ADDITIONAL_MAKE_CLEAN_FILES
 
 add_custom_command(
         OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Enclave_u.c
+        MAIN DEPENDS ../Enclave/Enclave.edl
         COMMAND ${SGX_EDGER8R} --untrusted ../Enclave/Enclave.edl
         --search-path ../Enclave/ 
         --search-path ${SGXSDK_INCLUDE_DIRS} 
